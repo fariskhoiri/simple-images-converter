@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Image Converter</title>
+    
+    <!-- Tambahan Library JSZip untuk membuat file ZIP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- 
+      Bagian CSS:
+      Jika kamu memisahkannya nanti, pindahkan isi tag <style> ini ke dalam file 'style.css'
+      dan gunakan <link rel="stylesheet" href="style.css"> di sini.
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Image Converter</h1>
+        <p class="subtitle">Quickly convert image formats</p>
+
+        <!-- Area Upload Gambar -->
+        <div class="upload-area" id="uploadArea">
+            <span id="uploadText">Click or drag the images here<br><small>(Supported formats are JPG, PNG, WEBP, and JFIF)</small></span>
+            <input type="file" id="fileInput" accept=".jpg, .jpeg, .png, .webp, .jfif" multiple>
+            <div id="previewContainer" class="preview-container"></div>
+        </div>
+
+        <!-- Kontrol Konversi -->
+        <div class="controls">
+            <div class="input-group">
+                <label for="formatSelect">Change to:</label>
+                <select id="formatSelect">
+                    <option value="jpg">JPG / JPEG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WEBP</option>
+                    <option value="jfif">JFIF</option>
+                </select>
+            </div>
+            
+            <button id="convertBtn" class="btn" disabled>Convert Now</button>
+        </div>
+
+        <!-- Area Hasil Unduhan -->
+        <div id="downloadArea">
+            <p id="statusText" style="margin-bottom: 10px; font-size: 0.9rem; color: #10b981;">Successfully converted!</p>
+            <a id="downloadLink" class="btn-download" download>Download file ZIP</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
